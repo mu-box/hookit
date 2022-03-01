@@ -3,7 +3,10 @@ module Hookit
     class Docker < Base
       
       def detect?
-        ! `cat /proc/self/cgroup 2>/dev/null | grep docker`.empty? 
+        ! `if [ -f "/.dockerenv" ] || [ -f "/.dockerinit" ] || \
+          grep -qF /docker/ "/proc/self/cgroup" 2>/dev/null; then
+            echo docker
+        fi`.empty?
       end
 
       def name

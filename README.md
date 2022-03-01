@@ -1,5 +1,5 @@
-[![hookit logo](http://nano-assets.gopagoda.io/readme-headers/hookit.png)](http://nanobox.io/open-source#hookit)
- [![Build Status](https://travis-ci.org/nanopack/hookit.svg)](https://travis-ci.org/nanopack/hookit)
+[![hookit logo](http://assets.microbox.cloud/readme-headers/hookit.png)](http://microbox.cloud/open-source#hookit)
+ [![Build Status](https://travis-ci.org/microbox/hookit.svg)](https://travis-ci.org/microbox/hookit)
 
 # Hookit
 
@@ -15,10 +15,10 @@ Complete/Stable
 
 ### Contributing
 
-Contributions to the hookit project are welcome and encouraged. hookit is a [Nanobox](https://nanobox.io) project and contributions should follow the [Nanobox Contribution Process & Guidelines](https://docs.nanobox.io/contributing/).
+Contributions to the hookit project are welcome and encouraged. hookit is a [Microbox](https://microbox.cloud) project and contributions should follow the [Microbox Contribution Process & Guidelines](https://docs.microbox.cloud/contributing/).
 
 ### Licence
 
 Mozilla Public License Version 2.0
 
-[![open source](http://nano-assets.gopagoda.io/open-src/nanobox-open-src.png)](http://nanobox.io/open-source)
+[![open source](http://assets.microbox.cloud/open-src/microbox-open-src.png)](http://microbox.cloud/open-source)

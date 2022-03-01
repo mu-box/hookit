@@ -47,10 +47,8 @@ module Hookit
         case scope
         when :default
           "/opt/local/bin/pkgin"
-        when :gopagoda
-          "/opt/gopagoda/bin/pkgin"
-        when :gonano
-          "/opt/gonano/bin/pkgin"
+        when :gomicro
+          "/opt/gomicro/bin/pkgin"
         end
       end
 
