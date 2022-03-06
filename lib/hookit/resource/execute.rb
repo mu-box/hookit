@@ -108,8 +108,12 @@ module Hookit
                     result << chunk.to_s
                   elsif socket == STDIN
                     # write what we got on STDIN right into the process' stdin
-                    chunk = socket.readpartial(4096)
-                    stdin.write(chunk)
+                    begin
+                      chunk = socket.readpartial(4096)
+                      stdin.write(chunk)
+                    rescue EOFError
+                      # no-op
+                    end
                   end
                 end
               end
