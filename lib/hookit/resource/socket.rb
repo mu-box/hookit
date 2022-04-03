@@ -3,6 +3,7 @@ module Hookit
     class Socket < Base
 
       field :port
+      field :protocol
       field :interface
       field :service
       field :max_checks
@@ -12,16 +13,32 @@ module Hookit
 
       def initialize(name)
         service name unless service
+        protocol :tcp unless protocol
         max_checks 3 unless max_checks
         super
 
+        case protocol
+        when :tcp
+          sun_proto_switch = "-f inet -P tcp"
+          proto_switch = "4t"
+        when :udp
+          sun_proto_switch = "-f inet -P udp"
+          proto_switch = "4u"
+        when :unix
+          sun_proto_switch = "-f unix"
+          proto_switch = "x"
+        else
+          sun_proto_switch = ""
+          proto_switch = ""
+        end
+
         case platform.os
         when 'sun'
-          @active_com   = "netstat -an | egrep '\*\.#{port}' | grep LISTEN"
-          @inactive_com = "netstat -an | grep 'ESTABLISHED' | awk '{ print $1 }' | grep \"$(ifconfig #{interface} | grep inet | awk '{ print $2 }')\.#{port}\""
+          @active_com   = "netstat -an #{sun_proto_switch} | egrep '\*\.#{port}' | grep LISTEN"
+          @inactive_com = "netstat -an #{sun_proto_switch} | grep 'ESTABLISHED' | awk '{ print $1 }' | grep \"$(ifconfig #{interface} | grep inet | awk '{ print $2 }')\.#{port}\""
         else
-          @active_com   = "netstat -an | egrep ':#{port}' | grep LISTEN"
-          @inactive_com = "netstat -an | grep 'ESTABLISHED' | awk '{ print $4 }' | grep \"$(ifconfig #{interface} | awk '/inet addr/ { print $2}' | cut -f2 -d':' | tr -d '\n'):#{port}\""
+          @active_com   = "netstat -an#{proto_switch} | egrep ':#{port}' | grep LISTEN"
+          @inactive_com = "netstat -an#{proto_switch} | grep 'ESTABLISHED' | awk '{ print $4 }' | grep \"$(ifconfig #{interface} | awk '/inet addr/ { print $2 }' | cut -f2 -d':' | tr -d '\n'):#{port}\""
         end
       end
 
