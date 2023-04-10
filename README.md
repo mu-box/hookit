@@ -1,5 +1,5 @@
-[![hookit logo](http://assets.microbox.cloud/readme-headers/hookit.png)](http://microbox.cloud/open-source#hookit)
- [![Build Status](https://travis-ci.org/microbox/hookit.svg)](https://travis-ci.org/microbox/hookit)
+[![hookit logo](http://microbox.rocks/assets/readme-headers/hookit.png)](http://microbox.cloud/open-source#hookit)
+ [![Build Status](https://github.com/microbox/hookit/actions/workflows/ci.yaml/badge.svg)](https://github.com/microbox/hookit/actions)
 
 # Hookit
 
@@ -19,6 +19,6 @@ Contributions to the hookit project are welcome and encouraged. hookit is a [Mic
 
 ### Licence
 
-Mozilla Public License Version 2.0
+This project is released under [The MIT License](http://opensource.org/licenses/MIT).
 
-[![open source](http://assets.microbox.cloud/open-src/microbox-open-src.png)](http://microbox.cloud/open-source)
+[![open source](http://microbox.rocks/assets/open-src/microbox-open-src.png)](http://microbox.cloud/open-source)

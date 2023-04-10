@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "micro-hookit"
   spec.version       = Hookit::VERSION
   spec.authors       = ["Hennik Hunsaker", "Tyler Flint", "Greg Linton"]
-  spec.email         = ["hennik@microbox.cloud"]
+  spec.email         = ["hennikhunsaker@microbox.cloud"]
   spec.summary       = %q{Hookit is a framework to provide hookit scripts with re-usable components and resources via an elegant dsl.}
   spec.description   = %q{The core framework to provide hookit scripts with re-usable components.}
   spec.homepage      = "https://microbox.cloud/open-source"
